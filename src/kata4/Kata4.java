@@ -2,6 +2,8 @@ package kata4;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import pa04.model.Histogram;
 import pa04.model.Mail;
@@ -16,7 +18,7 @@ public class Kata4 {
     }
     
     private String filename;
-    private List<Mail> mailList;
+    private ArrayList<Mail> mailList;
     private Histogram<String> histogram;
     private static HistogramDisplay histoDisplay;
         
@@ -26,9 +28,9 @@ public class Kata4 {
         output();
     }
     
-    private void input() throws IOException{
+    private void input() throws IOException, ClassNotFoundException, SQLException{
         filename = "/Users/DaniMangtani/NetBeansProjects/Kata4/emails.txt";
-        mailList = MailListReader.read(filename);
+        mailList = MailListReader.read();
     }
     
     private void process() throws Exception{
